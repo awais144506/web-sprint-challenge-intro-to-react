@@ -24,7 +24,13 @@ function App() {
       }).catch(err => console.log(err))
   }, [])
 
-
+  const homeworld= (id)=>{
+   
+    const match = planets.find((item) => item.id === id);
+    console.log(match)
+    return match ? match.name : 'Not Found';
+  }
+ 
   return (
     <div>
       <h2>Star Wars Characters</h2>
@@ -32,7 +38,8 @@ function App() {
      
         {/* ❗ Map over the data in state, rendering a Character at each iteration */
           people.map(p => {
-            return <Character name={p.name} key={p.id}/>
+           
+            return <Character name={p.name} key={p.id} homeworld = {homeworld(p.homeworld)}/>
           })
         }
     

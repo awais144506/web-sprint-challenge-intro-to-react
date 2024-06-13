@@ -21,7 +21,7 @@ afterAll(() => { server.close() })
 beforeEach(() => { renderApp(<App />) })
 afterEach(() => { server.resetHandlers() })
 
-describe('Sprint 6 Challenge', () => {
+describe.only('Sprint 6 Challenge', () => {
   test('[1] Luke Skywalker\'s name is not in the DOM after first render', async () => {
     expect(screen.queryByText('Luke Skywalker', queryOptions, waitForOptions)).not.toBeInTheDocument()
     await screen.findByText('Luke Skywalker', queryOptions, waitForOptions)

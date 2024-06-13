@@ -27,7 +27,6 @@ function App() {
   const homeworld= (id)=>{
    
     const match = planets.find((item) => item.id === id);
-    console.log(match)
     return match ? match.name : 'Not Found';
   }
  
